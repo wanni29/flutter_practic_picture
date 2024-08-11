@@ -1,16 +1,6 @@
 # flutter_practice_picture
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 그림그리기 연습
+- 서버는 임시 서버 라이브러리 이용해서 데이터 처리
+- 데이터 처리는 라이브러리 riverpod / dio를 사용하여 통신 및 상태관리를 진행
+- 하루에 2장씩 
+- 처음은 어렵고 시간도 오래 걸리지만 익숙해지는거다. 

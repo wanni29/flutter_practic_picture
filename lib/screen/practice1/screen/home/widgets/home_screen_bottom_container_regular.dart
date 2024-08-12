@@ -3,11 +3,15 @@ import 'package:flutter_practice_picture/core/Roboto.dart';
 import 'package:flutter_practice_picture/core/app_colors.dart';
 
 class HomeScreenBottomContainerRegular extends StatelessWidget {
-  final int imgUrl;
+  final String imgUrl;
+  final String title;
+  final int price;
 
   const HomeScreenBottomContainerRegular({
     super.key,
     required this.imgUrl,
+    required this.title,
+    required this.price,
   });
 
   @override
@@ -33,17 +37,17 @@ class HomeScreenBottomContainerRegular extends StatelessWidget {
           children: [
             Center(
               child: Image.asset(
-                "assets/images/chair$imgUrl.png",
+                imgUrl,
                 height: 170,
               ),
             ),
             SizedBox(height: 10.0),
             Text(
-              "NoArmChair FN903",
+              title,
               style: Roboto.sp15w500,
             ),
             Text(
-              "\$212",
+              "\$$price",
               style: customTextStyle,
             )
           ],

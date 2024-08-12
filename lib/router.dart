@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_picture/core/app_colors.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/home/home_screen.dart';
-import 'package:flutter_practice_picture/screen/practice1/screen/home/test_screen.dart';
+import 'package:flutter_practice_picture/screen/practice1/screen/home/widgets/test_screen.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:go_router/go_router.dart';
 

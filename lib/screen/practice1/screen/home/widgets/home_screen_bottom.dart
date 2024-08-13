@@ -26,15 +26,11 @@ class HomeScreenBottom extends StatelessWidget {
       itemBuilder: (context, index) {
         if (index % 4 == 0 || index % 4 == 3) {
           return HomeScreenBottomContainerSmall(
-            title: productList[index].title,
-            imgUrl: productList[index].imgUrl,
-            price: productList[index].price,
+            product: productList[index],
           ); // 첫 번째와 네 번째 타일에 작은 컨테이너
         } else {
           return HomeScreenBottomContainerRegular(
-            title: productList[index].title,
-            imgUrl: productList[index].imgUrl,
-            price: productList[index].price,
+            product: productList[index],
           ); // 두 번째와 세 번째 타일에 큰 컨테이너
         }
       },

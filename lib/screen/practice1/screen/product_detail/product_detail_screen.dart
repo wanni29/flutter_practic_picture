@@ -6,6 +6,7 @@ import 'package:flutter_practice_picture/core/Roboto.dart';
 import 'package:flutter_practice_picture/core/app_colors.dart';
 import 'package:flutter_practice_picture/data/models/product.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/widgets/product_detail_app_bar.dart';
+import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/widgets/product_detail_button.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/widgets/product_detail_mid.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/widgets/product_detail_price_and_rate.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/widgets/product_detail_rating_star.dart';
@@ -48,30 +49,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
-        height: 55,
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                AppColorsV1.mainCobalt,
-                AppColorsV1.mainCobalt.withOpacity(0.4)
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-            borderRadius: BorderRadius.circular(40.0),
-          ),
-          child: Center(
-            child: Text(
-              "Add to Cart",
-              style: Roboto.sp24w500white,
-            ),
-          ),
-        ),
-      ),
+      bottomNavigationBar: const ProductDetailButton(),
     );
   }
 }

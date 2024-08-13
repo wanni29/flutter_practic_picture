@@ -136,6 +136,20 @@ class Roboto {
 
   // AppColor.grey ZONE
 
+  static final sp10w500gray = TextStyle(
+    fontFamily: kDefaultFontFamily,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColorsV1.gray,
+  );
+
+  static final sp15w500gray = TextStyle(
+    fontFamily: kDefaultFontFamily,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColorsV1.gray,
+  );
+
   static final sp18w500gray = TextStyle(
     fontFamily: kDefaultFontFamily,
     fontSize: 18.sp,

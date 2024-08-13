@@ -19,6 +19,7 @@ dependencies:
   dio: ^5.5.0+1 # 통신 로직 잡기
   flutter_secure_storage: ^9.2.2
   flutter_riverpod: ^2.4.4
+  animated_rating_stars: ^1.0.1 # 별 평점
 
 
 

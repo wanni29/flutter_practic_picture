@@ -133,4 +133,19 @@ class Roboto {
     fontWeight: FontWeight.w500,
     color: AppColorsV1.mainCobalt,
   );
+
+  // AppColor.grey ZONE
+
+  static final sp18w500gray = TextStyle(
+    fontFamily: kDefaultFontFamily,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColorsV1.gray,
+  );
+  static final sp22w500gray = TextStyle(
+    fontFamily: kDefaultFontFamily,
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColorsV1.gray,
+  );
 }

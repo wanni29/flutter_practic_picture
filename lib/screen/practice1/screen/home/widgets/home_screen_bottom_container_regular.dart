@@ -43,7 +43,7 @@ class HomeScreenBottomContainerRegular extends StatelessWidget {
                   height: 170,
                 ),
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               Text(
                 product.title,
                 style: Roboto.sp15w500,

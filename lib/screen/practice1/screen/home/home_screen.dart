@@ -16,6 +16,13 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   double _headerHeight = 105.0;
   bool checkSliver = false;
+  late Future<List<Product>> _productListFuture; // Future를 캐싱
+
+  @override
+  void initState() {
+    super.initState();
+    _productListFuture = ref.read(homeScreenProvier.notifier).getProductList();
+  }
 
   void _handleScroll(double pixels) {
     // 스크롤 위치에 따라 실제 상태가 변경될 때만 setState 호출
@@ -30,11 +37,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final homeScreenProvider = ref.read(homeScreenProvier.notifier);
-
     return Scaffold(
       body: FutureBuilder<List<Product>>(
-        future: homeScreenProvider.getProductList(), // 제품 목록을 불러오는 Future
+        future: _productListFuture, // 제품 목록을 불러오는 Future
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             // 데이터 로딩 중일 때 로딩 인디케이터 표시
@@ -51,12 +56,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             List<Product> productList = snapshot.data ?? [];
 
             return NotificationListener<ScrollNotification>(
-              // onNotification: (scrollNotification) {
-              //   if (scrollNotification is ScrollUpdateNotification) {
-              //     _handleScroll(scrollNotification.metrics.pixels);
-              //   }
-              //   return true;
-              // },
+              onNotification: (scrollNotification) {
+                if (scrollNotification is ScrollUpdateNotification) {
+                  _handleScroll(scrollNotification.metrics.pixels);
+                }
+                return true;
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: CustomScrollView(

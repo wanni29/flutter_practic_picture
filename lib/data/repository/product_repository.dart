@@ -21,7 +21,6 @@ class ProductRepository {
           .toList();
       return productList;
     } catch (e) {
-      log(e.toString());
       throw Exception("오류가 발생했습니다. => ProductRepository를 확인하세요 !");
     }
   }

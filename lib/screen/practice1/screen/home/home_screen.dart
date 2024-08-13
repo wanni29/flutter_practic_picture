@@ -66,13 +66,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: CustomScrollView(
                   slivers: [
-                    SliverToBoxAdapter(
+                    const SliverToBoxAdapter(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const SizedBox(height: 80),
-                          const Padding(
+                          SizedBox(height: 80),
+                          Padding(
                             padding: EdgeInsets.only(bottom: 16.0),
                             child: HomeScreenTop(),
                           ),
@@ -100,14 +100,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       ),
                     ),
                     SliverPadding(
-                      padding: EdgeInsets.zero,
-                      sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) => HomeScreenBottom(
-                            productList: productList,
-                          ),
-                          childCount: productList.length,
-                        ),
+                      padding: const EdgeInsets.all(0.0),
+                      sliver: HomeScreenBottom(
+                        productList: productList,
                       ),
                     ),
                   ],

@@ -29,7 +29,6 @@ class HomeScreenViewModel extends StateNotifier<HomeScreenModel?> {
     final response = await ProductRepository().getProductList();
     if (response != null) {
       state?.productList = response;
-      log('${response.length}');
       return response;
     } else {
       return [];

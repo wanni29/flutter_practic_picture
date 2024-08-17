@@ -6,6 +6,7 @@ import 'package:flutter_practice_picture/screen/components/custom_text_form_fiel
 import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/widgets/login_app_bar.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/widgets/login_bottom_text.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/widgets/login_mid.dart';
+import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/widgets/login_screen_form.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/widgets/login_top.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -80,76 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 30),
                         if (_selectedIndex == 0) ...{
                           // 로그인 그리기
-                          Column(
-                            children: [
-                              CustomTextFormField(
-                                icon: Icon(
-                                  Icons.email_outlined,
-                                  color: AppColorsV1.mainCobalt,
-                                ),
-                                hintText: 'Email Address',
-                              ),
-                              const SizedBox(height: 20),
-                              CustomTextFormField(
-                                icon: Icon(
-                                  Icons.lock_outline,
-                                  color: AppColorsV1.mainCobalt,
-                                ),
-                                hintText: 'Password',
-                                shadowPassword: true,
-                              ),
-                              const SizedBox(height: 20),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Checkbox(
-                                          value: false,
-                                          onChanged: null,
-                                        ),
-                                      ),
-                                      Text(
-                                        "Remember me",
-                                        style: Roboto.sp15w500,
-                                      )
-                                    ],
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      print("비밀번호 찾기 페이지로 ! ");
-                                    },
-                                    child: Text(
-                                      "Forgot Password?",
-                                      style: Roboto.sp15w500mainCobalt,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              const SizedBox(height: 20),
-                              const CustomButton(title: "Login"),
-                              const LoginBottomText(),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  LoginBottomOAuthButton(
-                                    logoText: "Google",
-                                    logoUrl: "assets/images/logo/google.png",
-                                  ),
-                                  const SizedBox(width: 10.0),
-                                  LoginBottomOAuthButton(
-                                    logoText: "Facebook",
-                                    logoUrl: "assets/images/logo/facebook.png",
-                                  )
-                                ],
-                              )
-                            ],
-                          )
+                          const LoginScreenForm()
                         } else ...{
                           // 회원가입 그리기
                         }
@@ -161,48 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class LoginBottomOAuthButton extends StatelessWidget {
-  final String logoText;
-  final String logoUrl;
-
-  const LoginBottomOAuthButton({
-    super.key,
-    required this.logoText,
-    required this.logoUrl,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 60,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: AppColorsV1.gray.shade300),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 50,
-              height: 35,
-              child: Image.asset(logoUrl),
-            ),
-            Text(
-              logoText,
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            )
-          ],
-        ),
       ),
     );
   }

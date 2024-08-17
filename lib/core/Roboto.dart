@@ -63,6 +63,13 @@ class Roboto {
     color: AppColorsV1.white,
   );
 
+  static final sp20w500white = TextStyle(
+    fontFamily: kDefaultFontFamily,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColorsV1.white,
+  );
+
   static final sp22w500white = TextStyle(
     fontFamily: kDefaultFontFamily,
     fontSize: 22.sp,

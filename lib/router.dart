@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_picture/core/app_colors.dart';
 import 'package:flutter_practice_picture/data/models/product.dart';
+import 'package:flutter_practice_picture/screen/practice1/screen/auth/login/login_screen.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/home/home_screen.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/product_detail/product_detail_screen.dart';
 import 'package:flutter_practice_picture/screen/practice1/screen/setting/setting_screen.dart';
@@ -8,7 +9,7 @@ import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: '/home', // 초기 경로를 /home으로 설정
+  initialLocation: '/login', // 초기 경로를 /home으로 설정
   routes: [
     ShellRoute(
       builder: (context, state, child) {
@@ -51,6 +52,10 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const SettingScreen(),
         ),
       ],
+    ),
+    GoRoute(
+      path: "/login",
+      builder: (context, state) => const LoginScreen(),
     ),
     GoRoute(
       path: '/product/detail',

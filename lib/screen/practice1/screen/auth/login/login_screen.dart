@@ -80,7 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 30),
                         if (_selectedIndex == 0) ...{
-                          // 로그인 그리기
                           const LoginScreenForm()
                         } else ...{
                           // 회원가입 그리기
